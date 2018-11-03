@@ -1,0 +1,45 @@
+{
+  "description": "A request payload, as described by https://github.com/5app/5app-coding-challenge",
+  "type": "object",
+  "properties": {
+    "payload": {
+      "description": "The payload",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "description": "The count of this item",
+            "type": "number"
+          },
+          "name": {
+            "description": "Name of this item",
+            "type": "string"
+          },
+          "logos": {
+            "description": "Logos associated with this item",
+            "type": "array",
+            "items": {
+              "description": "A logo",
+              "type": "object",
+              "properties": {
+                "size": {
+                  "description": "Resolution of this logo",
+                  "pattern": "^[0-9]+x[0-9]+$",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "URL for this logo",
+                  "type": "string"
+                }
+              },
+              "required": ["size", "url"]
+            }
+          }
+        },
+        "required": ["count", "logos", "name"]
+      }
+    }
+  },
+  "required": ["payload"]
+}

@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validate() should fail on missing item count 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0]",
+    "keyword": "required",
+    "message": "should have required property 'count'",
+    "params": Object {
+      "missingProperty": "count",
+    },
+    "schemaPath": "#/properties/payload/items/required",
+  },
+]
+`;
+
+exports[`validate() should fail on missing item name 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0]",
+    "keyword": "required",
+    "message": "should have required property 'name'",
+    "params": Object {
+      "missingProperty": "name",
+    },
+    "schemaPath": "#/properties/payload/items/required",
+  },
+]
+`;
+
+exports[`validate() should fail on missing payload 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'payload'",
+    "params": Object {
+      "missingProperty": "payload",
+    },
+    "schemaPath": "#/required",
+  },
+]
+`;
+
+exports[`validate() should fail when count is not a number 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].count",
+    "keyword": "type",
+    "message": "should be number",
+    "params": Object {
+      "type": "number",
+    },
+    "schemaPath": "#/properties/payload/items/properties/count/type",
+  },
+]
+`;
+
+exports[`validate() should fail when item name is not a string 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].name",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/properties/payload/items/properties/name/type",
+  },
+]
+`;
+
+exports[`validate() should fail when logo size does not match expected format 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].logos[0].size",
+    "keyword": "pattern",
+    "message": "should match pattern \\"^[0-9]+x[0-9]+$\\"",
+    "params": Object {
+      "pattern": "^[0-9]+x[0-9]+$",
+    },
+    "schemaPath": "#/properties/payload/items/properties/logos/items/properties/size/pattern",
+  },
+]
+`;
+
+exports[`validate() should fail when logo size is missing 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].logos[0]",
+    "keyword": "required",
+    "message": "should have required property 'size'",
+    "params": Object {
+      "missingProperty": "size",
+    },
+    "schemaPath": "#/properties/payload/items/properties/logos/items/required",
+  },
+]
+`;
+
+exports[`validate() should fail when logo size is not a string 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].logos[0].size",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/properties/payload/items/properties/logos/items/properties/size/type",
+  },
+]
+`;
+
+exports[`validate() should fail when logo url is missing 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].logos[0]",
+    "keyword": "required",
+    "message": "should have required property 'url'",
+    "params": Object {
+      "missingProperty": "url",
+    },
+    "schemaPath": "#/properties/payload/items/properties/logos/items/required",
+  },
+]
+`;
+
+exports[`validate() should fail when logo url is not a string 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].logos[0].url",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/properties/payload/items/properties/logos/items/properties/url/type",
+  },
+]
+`;
+
+exports[`validate() should fail with missing logos 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0]",
+    "keyword": "required",
+    "message": "should have required property 'logos'",
+    "params": Object {
+      "missingProperty": "logos",
+    },
+    "schemaPath": "#/properties/payload/items/required",
+  },
+]
+`;
+
+exports[`validate() should fail with non-array logos 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload[0].logos",
+    "keyword": "type",
+    "message": "should be array",
+    "params": Object {
+      "type": "array",
+    },
+    "schemaPath": "#/properties/payload/items/properties/logos/type",
+  },
+]
+`;
+
+exports[`validate() should succeed on provided sample 1`] = `null`;
+
+exports[`validate() should succeed using generated sample 1`] = `null`;
+
+exports[`validate() should succeed with valid logo specified 1`] = `null`;
