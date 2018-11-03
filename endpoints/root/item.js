@@ -9,8 +9,8 @@ module.exports = function parseItem(item) {
   return {
     // Requirement 1: Where name and count match their respective properties from
     // the payload
-    count: item.count,
     name: item.name,
+    count: item.count,
 
     thumbnail: chosenLogo ? chosenLogo.url : null
   };
