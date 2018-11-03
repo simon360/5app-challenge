@@ -1,7 +1,8 @@
 const express = require("express");
 const config = require("./config");
 const helmet = require("helmet");
-const bodyParser = require("body-parser");
+
+const rootHandler = require("./endpoints/root");
 
 const app = express();
 
@@ -12,21 +13,21 @@ app.post("/", (req, res) => {
   // We're always going to return JSON.
   res.setHeader("Content-Type", "application/json");
 
-  // TODO: hook into correct functions
-  res.json({
-    response: [
-      {
-        name: "Molly",
-        count: 12,
-        thumbnail: "https://example.com/64x64.png"
-      },
-      {
-        name: "Polly",
-        count: 4,
-        thumbnail: "https://example.com/64x64.png"
-      }
-    ]
-  });
+  if (!req.body) {
+    res.status(400);
+    res.json({
+      errors: [{ message: "Unable to parse JSON from input" }]
+    });
+    return;
+  }
+
+  const result = rootHandler(req.body);
+
+  if (result.errors) {
+    res.status(400);
+  }
+
+  res.json(result);
 });
 
 app.listen(config.port);
