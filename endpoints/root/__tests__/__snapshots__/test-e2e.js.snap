@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`End to end tests should match error snapshot 1`] = `
+Object {
+  "errors": Array [
+    Object {
+      "dataPath": ".payload[0]",
+      "keyword": "required",
+      "message": "should have required property 'count'",
+      "params": Object {
+        "missingProperty": "count",
+      },
+      "schemaPath": "#/properties/payload/items/required",
+    },
+  ],
+}
+`;
