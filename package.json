@@ -1,0 +1,22 @@
+{
+  "name": "5app-coding-challenge",
+  "version": "1.0.0",
+  "description": "An API matching the requirements specified at https://github.com/5app/5app-coding-challenge/blob/master/samples/request.json",
+  "main": "index.js",
+  "author": "Simon Andrews <hello@sadl.io>",
+  "license": "MIT",
+  "scripts": {
+    "start-dev": "node index.js",
+    "start-production": "NODE_ENV=\"production\" node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "ajv": "^6.5.4",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "helmet": "^3.14.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
