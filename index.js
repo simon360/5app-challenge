@@ -6,14 +6,10 @@ const rootHandler = require("./endpoints/root");
 const app = express();
 
 app.use(express.json(), (error, req, res, next) => {
-  console.log("Error Input", req.body);
-
   if (error) {
     const result = {
       errors: [{ message: `Unable to parse JSON from input: ${error}` }]
     };
-
-    console.log("Error Output", result);
 
     res.setHeader("Content-Type", "application/json");
     res.status(400);
@@ -25,8 +21,6 @@ app.use(express.json(), (error, req, res, next) => {
 });
 
 app.post("/", (req, res) => {
-  console.log("Input", req.body);
-
   // We're always going to return JSON.
   res.setHeader("Content-Type", "application/json");
 
@@ -35,8 +29,6 @@ app.post("/", (req, res) => {
   if (result.errors) {
     res.status(400);
   }
-
-  console.log("Output", result);
 
   res.json(result);
 });
