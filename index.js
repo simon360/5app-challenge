@@ -1,12 +1,10 @@
 const express = require("express");
 const config = require("./config");
-const helmet = require("helmet");
 
 const rootHandler = require("./endpoints/root");
 
 const app = express();
 
-app.use(helmet());
 app.use(express.json(), (error, req, res, next) => {
   console.log("Error Input", req.body);
 
